@@ -1,0 +1,19 @@
+{
+  "name": "colemando/ratchetio-bundle",
+  "description": "Integrates Ratchet.io error reporting into your Symfony2 application.",
+  "authors": [
+    {
+      "name": "Eric Coleman",
+      "email": "eric@colemando.com"
+    }
+  ],
+  "require": {
+    "ratchetio/ratchetio": "dev-master"
+  },
+  "autoload": {
+    "psr-0": {
+      "Colemando\\RatchetioBundle": ""
+    }
+  },
+  "target-dir": "Colemando/RatchetioBundle"
+}

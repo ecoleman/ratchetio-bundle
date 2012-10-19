@@ -1,0 +1,12 @@
+parameters:
+  colemando_ratchetio.exception_listener.class: Colemando\RatchetIOBundle\EventListener\ExceptionListener
+
+services:
+  colemando_ratchetio.exception_listener:
+    class: %colemando_ratchetio.exception_listener.class%
+    arguments:
+      - %kernel.environment%
+      - %colemando_ratchetio.access_token%
+    tags:
+      - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+
