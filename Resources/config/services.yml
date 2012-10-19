@@ -1,12 +1,17 @@
 parameters:
-  colemando_ratchetio.exception_listener.class: Colemando\RatchetIOBundle\EventListener\ExceptionListener
+  colemando_ratchetio.twig_extension.class: Colemando\RatchetioBundle\Twig\RatchetioExtension
+  colemando_ratchetio.exception_listener.class: Colemando\RatchetioBundle\EventListener\ExceptionListener
 
 services:
+  colemando_ratchetio.twig_extension:
+    class: %colemando_ratchetio.twig_extension.class%
+    arguments:
+      - %colemando_ratchetio.access_token%
+    tags:
+      - { name: twig.extension }
+
   colemando_ratchetio.exception_listener:
     class: %colemando_ratchetio.exception_listener.class%
-    arguments:
-      - %kernel.environment%
-      - %colemando_ratchetio.access_token%
     tags:
       - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
 
