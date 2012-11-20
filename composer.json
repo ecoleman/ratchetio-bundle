@@ -2,7 +2,7 @@
   "name": "colemando/ratchetio-bundle",
   "description": "Integrates Ratchet.io error reporting into your Symfony2 application.",
   "type": "symfony-bundle",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
   "keywords": ["ratchet", "debugging", "monitoring", "errors", "exceptions"],
   "authors": [
     {
