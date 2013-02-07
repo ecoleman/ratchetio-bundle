@@ -10,6 +10,10 @@ class ExceptionListener
     public function onKernelException(GetResponseForExceptionEvent $event)
     {
         $exception = $event->getException();
+
+        if ($exception instanceof HttpException)
+            return;
+
         \Ratchetio::report_exception($exception);
     }
 }
